@@ -1,7 +1,7 @@
 # vita-ConsoleID
 Displays the PlayStation's Console ID
 
-![ref0](https://github.com/Freakler/vita-ConsoleID/raw/master/capture_000.jpg)
+![ref0](https://github.com/Freakler/vita-ConsoleID/raw/master/capture_000.png)
 
 ### Samples:
 ```
