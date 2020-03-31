@@ -1,5 +1,5 @@
 # vita-ConsoleID
-Displays the PlayStation's Console ID
+Displays the PlayStation's unique Console Identification String
 
 ![ref0](https://github.com/Freakler/vita-ConsoleID/raw/master/capture_000.png)
 
@@ -31,3 +31,5 @@ Displays the PlayStation's Console ID
 00 00     00 01     01 02     00 0A     04 00     XX XX XX XX XX XX  | .990 CEM                                                                           @HiRicky
  
 ```
+
+*You can press X to hide and O to re-show the unique part of your ID*
