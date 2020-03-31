@@ -1,5 +1,7 @@
 # vita-ConsoleID
-Displays the PlayStation's unique Console Identification String
+An Application that displays the PlayStation's unique Console Identification String.
+
+More Samples welcome! .. so we can figure out the still unknown/unclear parts! :)
 
 ![ref0](https://github.com/Freakler/vita-ConsoleID/raw/master/capture_000.png)
 
