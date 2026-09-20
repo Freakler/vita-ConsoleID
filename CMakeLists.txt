@@ -15,11 +15,11 @@ project(ConsoleID)
 include("${VITASDK}/share/vita.cmake" REQUIRED)
 set(VITA_APP_NAME "ConsoleID")
 set(VITA_TITLEID  "CONSOLEID")
-set(VITA_VERSION  "01.00")
+set(VITA_VERSION  "01.01")
 
 
 # Flags and includes
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -O3 -Wno-unused-variable -Wno-unused-but-set-variable -Wno-format-truncation -fno-lto")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -O3 -Wno-pointer-sign -Wno-format-truncation -fno-lto") # -Wno-unused-variable -Wno-unused-but-set-variable
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c+ + 11 -fno-rtti -fno-exceptions")
 set(VITA_MKSFOEX_FLAGS "${VITA_MKSFOEX_FLAGS} -d PARENTAL_LEVEL=1")
 set(VITA_MAKE_FSELF_FLAGS "${VITA_MAKE_FSELF_FLAGS} -a 0x2808000000000000")
@@ -55,14 +55,15 @@ vita_create_vpk(${PROJECT_NAME}.vpk ${VITA_TITLEID} ${PROJECT_NAME}.self
     FILE livearea/template.xml sce_sys/livearea/contents/template.xml
 )
 
+set(VITA_IP  "192.168.178.25")
 
 add_custom_target(vpksend
-	COMMAND curl -T ${PROJECT_NAME}.vpk ftp://192.168.188.76:1337/ux0:/
+	COMMAND curl -T ${PROJECT_NAME}.vpk ftp://${VITA_IP}:1337/ux0:/VPK/
 	DEPENDS ${PROJECT_NAME}.vpk
 )
 
 add_custom_target(send
-	COMMAND curl -T ${PROJECT_NAME}.self ftp://192.168.188.76:1337/ux0:/app/${VITA_TITLEID}/eboot.bin #$(PSVITAIP)
+	COMMAND curl -T ${PROJECT_NAME}.self ftp://${VITA_IP}:1337/ux0:/app/${VITA_TITLEID}/eboot.bin #$(PSVITAIP)
 	DEPENDS ${PROJECT_NAME}.self
 )
 
